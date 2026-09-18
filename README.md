@@ -13,6 +13,8 @@ The most important lesson was that three questions need to stay separate:
 That separation is the centre of the current architecture.
 
 **Project page:** https://ahmadhuseynli.github.io/chemcodex-environmental-risk-research/  
+**Technical note:** https://ahmadhuseynli.github.io/chemcodex-environmental-risk-research/assets/CHEMCODEX_ENVIRONMENTAL_RISK_TECHNICAL_NOTE_v0.1.pdf  
+**Public release:** https://github.com/ahmadhuseynli/chemcodex-environmental-risk-research/releases/tag/v0.1.0  
 **Historical prototype:** https://github.com/ahmadhuseynli/knowyourhazards
 
 ## What exists
@@ -69,3 +71,9 @@ See:
 - [REFERENCES.md](REFERENCES.md)
 - [ROADMAP.md](ROADMAP.md)
 - [prototype_code/](prototype_code/)
+
+
+## Related independent research
+
+- Atmospheric Dispersion Surrogate Research: https://ahmadhuseynli.github.io/aermod-surrogate-research/
+- Methane Measurement & Quantification Conditions Research: https://ahmadhuseynli.github.io/methane-measurement-conditions-research/
