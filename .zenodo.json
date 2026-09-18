@@ -4,6 +4,6 @@
   "description": "Independent research archive covering environmental chemical hazard screening, SDS evidence extraction, explicit exposure/effect separation, PEC/PNEC risk characterisation, scientific parameter audit and prototype code.",
   "creators": [{"name": "Huseynli, Ahmad"}],
   "keywords": ["environmental risk assessment", "chemical hazard", "ecotoxicology", "PEC", "PNEC", "SDS parsing", "marine discharge", "OSPAR", "environmental compliance"],
-  "version": "0.1.1",
+  "version": "0.1.2",
   "related_identifiers": [{"identifier": "https://github.com/ahmadhuseynli/knowyourhazards", "relation": "isSupplementTo", "scheme": "url"}]
 }
