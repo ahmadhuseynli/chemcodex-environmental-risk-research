@@ -1,0 +1,9 @@
+{
+  "title": "ChemCodex / Environmental Chemical Hazard & Risk Research",
+  "upload_type": "software",
+  "description": "Independent research archive covering environmental chemical hazard screening, SDS evidence extraction, explicit exposure/effect separation, PEC/PNEC risk characterisation and prototype code.",
+  "creators": [{"name": "Huseynli, Ahmad"}],
+  "keywords": ["environmental risk assessment", "chemical hazard", "ecotoxicology", "PEC", "PNEC", "SDS parsing", "marine discharge", "OSPAR", "environmental compliance"],
+  "version": "0.1.0",
+  "related_identifiers": [{"identifier": "https://github.com/ahmadhuseynli/knowyourhazards", "relation": "isSupplementTo", "scheme": "url"}]
+}
