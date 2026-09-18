@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Independent research on environmental chemical hazard screening, SDS evidence extraction, exposure assessment and scenario-specific risk characterisation.">
+  <title>ChemCodex - Environmental Chemical Hazard & Risk Research</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="wrap row">
+    <div class="brand">ChemCodex Research</div>
+    <nav>
+      <a href="#idea">Project</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#prototypes">Prototypes</a>
+      <a href="#limits">Limits</a>
+      <a href="#future">Next</a>
+      <a href="https://github.com/ahmadhuseynli/chemcodex-environmental-risk-research">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Independent environmental-risk research</div>
+    <h1>From a chemical SDS to a transparent environmental risk assessment.</h1>
+    <p>A Safety Data Sheet can tell you a great deal about a chemical, but it cannot by itself answer whether a particular discharge will create unacceptable environmental risk. ChemCodex grew from trying to connect the missing pieces: chemical hazard, environmental exposure, effect thresholds and the decision to refine or escalate an assessment.</p>
+    <p>The project has gone through spreadsheets, mixture logic, SDS parsers, web prototypes, PEC/PNEC calculations and AI-assisted extraction experiments. The current direction is deliberately simpler: use AI where it helps organise evidence, keep the scientific rules explicit, and never hide scenario assumptions inside one unexplained score.</p>
+    <div class="buttons">
+      <a class="button" href="assets/CHEMCODEX_ENVIRONMENTAL_RISK_TECHNICAL_NOTE_v0.1.pdf">Read the technical note</a>
+      <a class="button secondary" href="https://github.com/ahmadhuseynli/chemcodex-environmental-risk-research">Repository</a>
+      <a class="button secondary" href="#prototypes">See prototype code</a>
+    </div>
+  </div>
+</section>
+
+<section id="idea">
+  <div class="wrap">
+    <h2>The problem the project is trying to solve</h2>
+    <p class="lead">Environmental chemical review often lives across separate SDS files, regulatory lists, spreadsheets, discharge assumptions and specialist modelling. The useful part is not another hazard score. It is a traceable chain from evidence to decision.</p>
+    <div class="threeq">
+      <div class="card"><span class="num">1</span><h3>What can the chemical do?</h3><p>Aquatic toxicity, persistence, bioaccumulation, H-codes, composition and regulatory context.</p></div>
+      <div class="card"><span class="num">2</span><h3>What concentration will occur?</h3><p>Release mass, duration, receiving environment, dilution, fate and the relevant environmental compartment.</p></div>
+      <div class="card"><span class="num">3</span><h3>Does exposure exceed effect?</h3><p>Use a defensible effect threshold and compare it with exposure, while retaining uncertainty and the assumptions that created the result.</p></div>
+    </div>
+    <div class="note"><strong>Hazard and risk are not interchangeable.</strong> A hazardous substance can have low scenario-specific exposure. A low-hazard material can still deserve higher-tier modelling when the release is large or the receiving environment is poorly mixed.</div>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="wrap">
+    <h2>Current architecture</h2>
+    <p class="lead">The recovered project contains many prototype generations. The most defensible architecture separates them into stages that can be tested independently.</p>
+    <div class="flow">
+      <div><b>Identity & context</b><br>product, components, CAS/EC, regulatory flags, scenario</div>
+      <div><b>Evidence extraction</b><br>H-codes, ecotoxicity, species, duration, PBT/BCF/logKow</div>
+      <div><b>Effect assessment</b><br>endpoint selection, PNEC or applicable threshold, justification</div>
+      <div><b>Exposure & risk</b><br>PEC, compartment, RQ, uncertainty, escalation</div>
+    </div>
+    <p>The design rule is straightforward: <strong>AI may extract; deterministic rules decide.</strong> That still leaves the deterministic rules subject to source control, scientific review and validation.</p>
+  </div>
+</section>
+
+<section id="prototypes">
+  <div class="wrap">
+    <h2>What was actually built</h2>
+    <p class="lead">This was not one application written once. Different prototypes tested different parts of the problem.</p>
+    <div class="grid">
+      <div class="card"><h3>Excel / VBA hazard engine</h3><p>Aquatic hazard statements, toxicity, PBT, bioaccumulation, regulatory lookup, mixture logic and summary macros.</p></div>
+      <div class="card"><h3>SDS parsing</h3><p>Rule-based extraction of components, H400-H413 statements and aquatic endpoints such as LC50, EC50, NOEC, LL50 and EL50.</p></div>
+      <div class="card"><h3>Web prototypes</h3><p>Streamlit and Flask branches moved the work from analyst spreadsheets toward an application and report-generation workflow.</p></div>
+      <div class="card"><h3>JavaScript rules engine</h3><p>Later browser logic added endpoint reliability, product/component evidence and more explicit mixture handling.</p></div>
+      <div class="card"><h3>PEC / PNEC risk workbook</h3><p>The project eventually separated source/exposure information from effect thresholds and calculated scenario-specific screening risk.</p></div>
+      <div class="card"><h3>AI-assisted extraction</h3><p>A later branch used an LLM to structure SDS evidence. The public architecture keeps that extraction layer separate from the risk rules.</p></div>
+    </div>
+    <div class="buttons">
+      <a class="button secondary" href="https://github.com/ahmadhuseynli/chemcodex-environmental-risk-research/tree/main/prototype_code">Public prototype code</a>
+      <a class="button secondary" href="https://github.com/ahmadhuseynli/knowyourhazards">Earlier KnowYourHazards prototype</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>A small public code example</h2>
+    <p class="lead">The repository includes a deliberately limited parser and screening calculator. The calculator has no hidden default dilution or assessment factor: those have to be supplied as explicit scenario inputs.</p>
+    <div class="codebox"><code>synthetic SDS text<br>↓<br>environmental H-codes + endpoint candidates<br>↓<br>reviewed effect value + explicit assessment factor<br>↓<br>release mass + receiving volume + dilution<br>↓<br>PEC / PNEC = screening RQ</code></div>
+    <p>This is an architecture demonstration, not an approved environmental assessment method.</p>
+  </div>
+</section>
+
+<section id="limits">
+  <div class="wrap two">
+    <div>
+      <h2>What survived the research</h2>
+      <p>Hazard, exposure and risk need separate modules. Missing data should stay visible. Evidence quality matters. A regulatory-list match is a routing signal, not a universal proof of no risk. Simple screening needs an escalation path when physical exposure cannot be represented honestly.</p>
+    </div>
+    <div>
+      <h2>What did not survive</h2>
+      <p>Several older formulas were too simple: generic persistence conversions, broad mixture triggers, fixed PNEC factors, universal dilution assumptions and a failed one-class ML experiment. They are preserved as development history, not current scientific rules.</p>
+    </div>
+  </div>
+</section>
+
+<section id="future">
+  <div class="wrap">
+    <h2>Where it can go next</h2>
+    <p class="lead">The next serious step is not more interface work. It is a validated evidence and calculation engine.</p>
+    <div class="grid">
+      <div class="card"><h3>Reviewed benchmark library</h3><p>Manually checked SDS/component cases with locked sources and known expected outputs.</p></div>
+      <div class="card"><h3>Separate extraction validation</h3><p>Measure endpoint recall, unit accuracy, component linking and hallucination rate before judging the risk engine.</p></div>
+      <div class="card"><h3>Rule-by-rule scientific QA</h3><p>Every deterministic rule gets a named source, version, applicability statement, unit tests and edge cases.</p></div>
+      <div class="card"><h3>Independent ERA comparison</h3><p>Compare the screening engine with professionally completed environmental risk assessments, including cases that require refinement.</p></div>
+      <div class="card"><h3>Higher-tier handoff</h3><p>Route difficult cases to hydrodynamic modelling, whole-effluent testing, specialist metal assessment or monitoring.</p></div>
+      <div class="card"><h3>Auditable environmental workflow</h3><p>If validated, the same structure could support chemical inventory review, discharge screening, permitting and environmental-compliance QA.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Primary sources and related work</h2>
+    <p class="lead">The public record links directly to OSPAR, ECHA and OECD source material. It also connects to two other independent environmental research projects.</p>
+    <div class="buttons">
+      <a class="button secondary" href="https://www.ospar.org/work-areas/oic/chemicals">OSPAR Offshore Chemicals</a>
+      <a class="button secondary" href="https://echa.europa.eu/guidance-documents/guidance-on-information-requirements-and-chemical-safety-assessment">ECHA guidance</a>
+      <a class="button secondary" href="https://ahmadhuseynli.github.io/aermod-surrogate-research/">Atmospheric dispersion surrogate</a>
+      <a class="button secondary" href="https://ahmadhuseynli.github.io/methane-measurement-conditions-research/">Methane measurement research</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Independent research project by Ahmad Huseynli. Research/demo material only; not an approved regulatory method and not affiliated with OSPAR, ECHA, OECD, IMO/GESAMP or any competent authority.</div>
+</footer>
+</body>
+</html>
