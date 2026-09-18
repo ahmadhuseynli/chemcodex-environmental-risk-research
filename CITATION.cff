@@ -5,8 +5,9 @@ type: software
 authors:
   - family-names: Huseynli
     given-names: Ahmad
-version: 0.1.0
+version: 0.1.1
 date-released: 2026-09-18
+doi: "10.5281/zenodo.22828340"
 repository-code: "https://github.com/ahmadhuseynli/chemcodex-environmental-risk-research"
 url: "https://ahmadhuseynli.github.io/chemcodex-environmental-risk-research/"
 abstract: "Independent research on evidence-controlled chemical hazard screening, SDS extraction, environmental exposure assessment and scenario-specific risk characterisation."
