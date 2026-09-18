@@ -6,7 +6,8 @@ This DOI should be used when referring to the ChemCodex research project general
 
 ## Archived versions
 
+- **v0.1.2 - Corrected scientific-audit archive:** 10.5281/zenodo.22828746
 - **v0.1.1 - Scientific audit update:** 10.5281/zenodo.22828642
 - **v0.1.0 - Initial public archive:** 10.5281/zenodo.22828341
 
-The v0.1.1 archive adds the completed scientific/technical audit, expanded nine-tier architecture, historical-parameter review and validation requirements. The original archived versions remain immutable.
+v0.1.2 is the current citation target. It preserves the scientific/technical audit and corrects the technical note so that the consolidated architecture is expressed once, consistently, as nine tiers.
