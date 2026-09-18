@@ -17,6 +17,7 @@ That separation is the centre of the current architecture.
 **Project page:** https://ahmadhuseynli.github.io/chemcodex-environmental-risk-research/  
 **Technical note:** https://ahmadhuseynli.github.io/chemcodex-environmental-risk-research/assets/CHEMCODEX_ENVIRONMENTAL_RISK_TECHNICAL_NOTE_v0.1.pdf  
 **Zenodo project DOI:** https://doi.org/10.5281/zenodo.22828340  
+**Current archived version (v0.1.1):** https://doi.org/10.5281/zenodo.22828642  
 **Historical prototype:** https://github.com/ahmadhuseynli/knowyourhazards
 
 ## What exists
