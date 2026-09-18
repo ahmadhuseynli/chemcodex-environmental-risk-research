@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use or discuss this research archive, please cite it as below."
+title: "ChemCodex / Environmental Chemical Hazard & Risk Research"
+type: software
+authors:
+  - family-names: Huseynli
+    given-names: Ahmad
+version: 0.1.0
+date-released: 2026-09-18
+repository-code: "https://github.com/ahmadhuseynli/chemcodex-environmental-risk-research"
+url: "https://ahmadhuseynli.github.io/chemcodex-environmental-risk-research/"
+abstract: "Independent research on evidence-controlled chemical hazard screening, SDS extraction, environmental exposure assessment and scenario-specific risk characterisation."
+keywords:
+  - environmental risk assessment
+  - chemical hazard
+  - ecotoxicology
+  - PEC PNEC
+  - SDS parsing
+  - marine discharge
+  - OSPAR
+  - environmental compliance
