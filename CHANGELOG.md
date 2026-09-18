@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.1.2 - Technical-note consistency correction
+
+Corrective archive of the scientific-audit update.
+
+The scientific conclusions and technical parameters are unchanged from v0.1.1. This version removes duplicated legacy stage wording from the technical note so the report contains one internally consistent nine-tier architecture.
+
+
 ## v0.1.1 - Scientific audit update
 
 No historical prototype result was rewritten.
