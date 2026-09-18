@@ -1,5 +1,7 @@
 # ChemCodex / Environmental Chemical Hazard & Risk Research
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22828340.svg)](https://doi.org/10.5281/zenodo.22828340)
+
 This is an independent research project on a practical environmental problem: **how can raw chemical information be turned into a transparent assessment of environmental hazard and scenario-specific risk without hiding the assumptions in a single score?**
 
 The work started from real marine-discharge assessment questions and gradually grew into spreadsheets, mixture logic, SDS parsers, a small web application, a JavaScript rules engine, explicit PEC/PNEC calculations and later AI-assisted extraction experiments.
@@ -14,7 +16,7 @@ That separation is the centre of the current architecture.
 
 **Project page:** https://ahmadhuseynli.github.io/chemcodex-environmental-risk-research/  
 **Technical note:** https://ahmadhuseynli.github.io/chemcodex-environmental-risk-research/assets/CHEMCODEX_ENVIRONMENTAL_RISK_TECHNICAL_NOTE_v0.1.pdf  
-**Public release:** https://github.com/ahmadhuseynli/chemcodex-environmental-risk-research/releases/tag/v0.1.0  
+**Zenodo project DOI:** https://doi.org/10.5281/zenodo.22828340  
 **Historical prototype:** https://github.com/ahmadhuseynli/knowyourhazards
 
 ## What exists
@@ -34,11 +36,26 @@ The recovered project contains a substantial prototype lineage rather than one f
 
 The public repository does **not** pretend that every historical formula was correct. Several early shortcuts were later found to be too simple or too confident. Those are part of the research record.
 
+## What the deeper technical audit added
+
+The final project-history audit made several parts of the scientific basis more precise.
+
+It confirmed that:
+
+- historical BCF/logKow screening logic must be kept separate from formal REACH Annex XIII criteria;
+- generic M-factor tables and experimental species weights are not defensible as universal regulatory multipliers;
+- historical dilution factors, assessment factors and default PEC values were prototype assumptions rather than fixed regulatory constants;
+- sediment exposure needs a separate, defensible partitioning/fate treatment;
+- the mature architecture is better represented as a nine-layer chain from identity/evidence through regulatory routing, hazard, PNEC, PEC, risk, escalation and audit;
+- the AI extraction layer should be replaceable without changing the deterministic environmental rules.
+
+The detailed parameter-by-parameter review is in [TECHNICAL_AUDIT.md](TECHNICAL_AUDIT.md).
+
 ## Current scientific direction
 
 The strongest version of the idea is a provenance-first tiered engine:
 
-**chemical identity & regulatory context -> evidence extraction -> hazard/effect assessment -> exposure/PEC -> risk characterisation -> uncertainty & escalation**
+**identity/context -> evidence extraction -> regulatory routing -> intrinsic hazard -> effect assessment -> exposure -> risk characterisation -> escalation -> report/audit**
 
 AI can help extract and normalise evidence from SDS documents, but the scientific decision layer should remain deterministic, reviewable and tied to explicit sources and assumptions.
 
@@ -65,13 +82,13 @@ See:
 
 - [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md)
 - [SCIENTIFIC_ARCHITECTURE.md](SCIENTIFIC_ARCHITECTURE.md)
+- [TECHNICAL_AUDIT.md](TECHNICAL_AUDIT.md)
 - [PROTOTYPE_LINEAGE.md](PROTOTYPE_LINEAGE.md)
 - [VALIDATION_AND_LIMITS.md](VALIDATION_AND_LIMITS.md)
 - [EVIDENCE_AND_PROVENANCE.md](EVIDENCE_AND_PROVENANCE.md)
 - [REFERENCES.md](REFERENCES.md)
 - [ROADMAP.md](ROADMAP.md)
 - [prototype_code/](prototype_code/)
-
 
 ## Related independent research
 
