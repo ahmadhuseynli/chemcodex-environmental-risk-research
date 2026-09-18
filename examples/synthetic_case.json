@@ -1,0 +1,11 @@
+{
+  "case_name": "Synthetic marine discharge screening example",
+  "synthetic_sds_text": "Environmental information: H411. Fish LC50 2.5 mg/L, 96 h. Daphnia EC50 1.8 mg/L, 48 h. Algae NOEC 0.20 mg/L.",
+  "screening_inputs": {
+    "release_mass_mg": 500000.0,
+    "receiving_volume_l": 1000000.0,
+    "dilution_factor": 100.0,
+    "effect_value_mg_l": 0.2,
+    "assessment_factor": 100.0
+  }
+}
