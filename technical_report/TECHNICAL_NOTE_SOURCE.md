@@ -88,15 +88,15 @@ That led to an important design requirement for ChemCodex: the tool should not o
 
 The consolidated architecture is best represented as a nine-layer chain.
 
-Tier 0 - identity and regulatory context. Product/components, CAS/EC, composition, H-codes, relevant OSPAR/HOCNF/PLONOR/REACH context, release scenario and data-quality status.
+Tier 0 - identity and context. Product/components, CAS/EC, concentration ranges, intended use/release, freshwater or marine context, applicable jurisdiction and data-quality/confidentiality status.
 
-Tier 1 - evidence-controlled extraction. Acute/chronic aquatic endpoints, species, duration, reliability, PBT/vPvB evidence, BCF/logKow, biodegradation, solubility, metals/inorganics and whole-mixture versus component evidence.
+Tier 1 - evidence extraction. Structured evidence objects retain source section/page, endpoint type, species, duration, value, unit, comparator, reliability and measured/guideline/read-across/QSAR status.
 
-Tier 2 - effect assessment. Select a defensible endpoint and derive a compartment-appropriate PNEC or other effect threshold while preserving the assessment factor, method and justification.
+Tier 2 - regulatory routing. Versioned REACH/CLP/OSPAR/HOCNF/PLONOR flags route the assessment workflow without silently declaring universal safety.
 
-Tier 3 - exposure assessment. Calculate PEC using release mass, duration, receiving environment, dilution/fate and partitioning assumptions. Defaults, if used, must be visible scenario parameters.
+Tier 3 - intrinsic hazard. Characterise acute/chronic aquatic hazard, bioaccumulation, persistence, metals/inorganics and whole-mixture/component evidence without hiding unsupported composite scores.
 
-Tier 4 - risk characterisation. Compare exposure with effect, retain uncertainty and identify sensitive compartments or missing evidence.
+Tier 4 - effect assessment. Derive PNEC or another applicable effect threshold from selected evidence with an explicit assessment-factor rule and justification.
 
 Tier 5 - exposure. Calculate water/sediment PEC from mass release, discharge, dilution/fate, degradation/partitioning and scenario geometry with all defaults visible.
 
@@ -105,6 +105,8 @@ Tier 6 - risk characterisation. Calculate PEC/PNEC or another relevant metric by
 Tier 7 - escalation. Route unsuitable screening cases to hydrodynamic modelling, whole-effluent toxicity, specialist metal assessment, sediment modelling or monitoring.
 
 Tier 8 - report and audit. Preserve a machine-readable evidence package, human-readable report, rule/version identifiers and reviewer decisions.
+
+The architectural principle is decoupling: the AI extraction model should be replaceable without changing the deterministic environmental rules, and regulatory-rule changes should not require retraining the extraction model.
 
 ## 8. Technical audit: parameters that should not become hidden defaults
 
